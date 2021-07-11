@@ -1,3 +1,7 @@
+CC?=gcc
+
+all: susan
+
 susan: susan.c Makefile
 	gcc -static -O4 -o susan susan.c -lm 
 
