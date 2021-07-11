@@ -32,12 +32,13 @@ SASR	= -DSASR
 # CC		= /usr/lang/acc
 # CCFLAGS 	= -c -O
 
-CC		= gcc -ansi -pedantic -static
+
+CC		?= gcc
 # ARM gcc doesn't like the -O1 here...
 #CCFLAGS 	= -c -O1 -DSTUPID_COMPILER -DNeedFunctionPrototypes=1
-CCFLAGS 	= -c -O3 -DSTUPID_COMPILER -DNeedFunctionPrototypes=1
+CCFLAGS 	= -ansi -pedantic -static -c -O3 -DSTUPID_COMPILER -DNeedFunctionPrototypes=1
 
-LD 		= $(CC)
+LD 		= $(CC) -ansi -pedantic -static
 
 # LD		= gcc
 # LDFLAGS 	=
@@ -89,7 +90,7 @@ TOAST_INSTALL_MAN = $(TOAST_INSTALL_ROOT)/man/man1
 SHELL		= /bin/sh
 LN		= ln
 BASENAME 	= basename
-AR		= ar
+AR		= $(TARGET)ar
 ARFLAGS		= cr
 RMFLAGS		=
 FIND		= find
