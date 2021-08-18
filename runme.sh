@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export MIBENCH=/home/ubuntu/mibench
+export MIBENCH=$(pwd)
 
 function runme(){
   echo "#=============================="
